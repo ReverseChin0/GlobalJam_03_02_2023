@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Vector2 m_Horizontal;
+    [HideInInspector] public Vector2 m_Horizontal;
     private Rigidbody2D m_Rigibody;
 
     [SerializeField] private float m_Speed;
