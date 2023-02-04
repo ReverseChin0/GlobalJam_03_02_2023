@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : SingletonAsComponent<GameManager>
 {
-    // Start is called before the first frame update
-    void Start()
+    #region SINGLETON
+    public static GameManager Instance
     {
-        
+        get { return (GameManager)_Instance; }
+        set { _Instance = value; }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    #endregion
 }
