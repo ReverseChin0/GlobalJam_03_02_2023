@@ -141,6 +141,7 @@ public class PlayerAttackComponent : MonoBehaviour
         foreach(Collider2D col in colliders)
         {
             print(col+"Golpee un enemigo e hice" + _attackStrength[attIndex] + "de daño");
+            col.GetComponent<Enemy_Base>().TakeDamage((int)_attackStrength[attIndex]);
         }
         
     }

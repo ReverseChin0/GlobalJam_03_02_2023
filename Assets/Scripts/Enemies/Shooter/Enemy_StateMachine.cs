@@ -12,6 +12,7 @@ public class Enemy_StateMachine : Enemy_Base
 
     private void Awake()
     {
+        m_CurrentHealth = m_MaxHealth;
         m_ActualStateIndex = m_InitialStateIndex;
     }
 

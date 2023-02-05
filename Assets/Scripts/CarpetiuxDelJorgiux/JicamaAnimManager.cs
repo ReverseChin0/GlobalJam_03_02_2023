@@ -36,7 +36,7 @@ public class JicamaAnimManager : MonoBehaviour
 
     void HandleEvent(TrackEntry trackEntry, Spine.Event e)
     {
-        if (e.Data.Name == "Atk_Front_Hand")
+        /*if (e.Data.Name == "Atk_Front_Hand")
         {
             if(Front_Hand_Collider.enabled)
             {
@@ -82,7 +82,7 @@ public class JicamaAnimManager : MonoBehaviour
             {
                 Back_Foot_Collider.enabled = true;
             }
-        }
+        }*/
 
         if (e.Data.Name == "Shoot")
         {
