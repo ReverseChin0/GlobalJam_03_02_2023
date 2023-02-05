@@ -9,6 +9,8 @@ public class MainMenuScript : MonoBehaviour
 {
     [SerializeField]
     private EventSystem _eventsystem;
+    [SerializeField]
+    AudioSource _audioSource;
 
 
     public void setActiveButton()
@@ -32,6 +34,11 @@ public class MainMenuScript : MonoBehaviour
     {
         yield return LocalizationSettings.InitializationOperation;
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[_localeID];
+    }
+
+    public void sourceDeAudio(float _vol)
+    {
+        _audioSource.volume = _vol * _vol;
     }
 
     void QuitGame()
