@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - BehindPlatform
+  - Enemies
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Platform
   - PlayerFeet
   - BehindPlatform
-  - 
+  - Player
   - 
   - 
   - 

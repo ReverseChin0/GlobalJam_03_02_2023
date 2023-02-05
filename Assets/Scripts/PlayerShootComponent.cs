@@ -6,13 +6,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerShootComponent : MonoBehaviour
 {
-    [SerializeField]
-    private Transform _aimArrow;
+    //private Transform _aimArrow;
     [SerializeField]
     private float _shootRate = 0.2f, _shootForce = 10, _attackRangeRadius = 10, _maxUpShootAngle=90, _minDownShootAngle=45;
-
-    [SerializeField]
-    bool _facingRight = true;
+    private PlayerMovement _Movement;
 
     /*SHOOTING*/
     private float _aimAngle;
@@ -29,7 +26,8 @@ public class PlayerShootComponent : MonoBehaviour
         foreach(var obj in GameObject.FindGameObjectsWithTag("Enemies"))
         {
             _currentEnemies.Add(obj.transform);
-        }        
+        }
+        _Movement = GetComponent<PlayerMovement>();
     }
 
     private void Update()
@@ -58,14 +56,14 @@ public class PlayerShootComponent : MonoBehaviour
         _targetEnemie = GetClosestEnemiePosition();
         if (_targetEnemie == Vector3.zero)
         {
-            _targetEnemie = _facingRight ? Vector2.right : -Vector2.right;
+            _targetEnemie = _Movement.IsFacingRight ? Vector2.right : -Vector2.right;
             _targetEnemie += transform.position;
         }
         Vector3 lookDir = _targetEnemie - transform.position;
 
         lookDir.Normalize();
         _aimAngle = Vector2.SignedAngle(Vector2.right, lookDir);
-        _aimArrow.eulerAngles = new Vector3(0, 0, _aimAngle);
+        //_aimArrow.eulerAngles = new Vector3(0, 0, _aimAngle);
     }
 
     private Vector3 GetClosestEnemiePosition()
@@ -79,7 +77,7 @@ public class PlayerShootComponent : MonoBehaviour
             //angulo entre mi transform right y el vector que nos une al enemigo
             float _angleToPlayer = FindDegree(Vector2.right, enemie.position - transform.position);                                    
 
-            if (_facingRight)
+            if (_Movement.IsFacingRight)
             {
                 if (_angleToPlayer < _maxUpShootAngle || _angleToPlayer > 360 - _minDownShootAngle) inAngle = true;
             }
@@ -144,7 +142,7 @@ public class PlayerShootComponent : MonoBehaviour
         Vector3 upShootDir = new Vector2(Mathf.Cos(upperRadians), Mathf.Sin(upperRadians));
         float lowerRadians = _minDownShootAngle * -(Mathf.PI / 180);
         Vector3 downShootDir = new Vector2(Mathf.Cos(lowerRadians), Mathf.Sin(lowerRadians));
-        if (!_facingRight)
+        if (_Movement != null && !_Movement.IsFacingRight)
         {
             upShootDir.x *= -1;
             downShootDir.x *= -1;

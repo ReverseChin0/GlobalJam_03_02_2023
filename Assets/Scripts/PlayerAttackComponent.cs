@@ -13,13 +13,17 @@ public class PlayerAttackComponent : MonoBehaviour
     [SerializeField]
     float _resetLightAttackIndex, _resetHeavyAttackIndex;
 
-    [SerializeField]
-    bool _isFacingRight = false;
+    private PlayerMovement _Movement;
 
     bool _activeLightHitBox = false, _activeHeavyHitBox = false;
 
     float _currentLightAttackDuration = 0, _currentHeavyAttDuration = 0, _timeSinceLasLighttAttack = 0, _timeSinceLastHeavyAttack=0;
-    
+
+    private void Awake()
+    {
+        _Movement = GetComponent<PlayerMovement>();
+    }
+
 
     private void Update()
     {
