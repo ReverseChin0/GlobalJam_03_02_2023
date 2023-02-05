@@ -525,12 +525,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e38577ea6d3b2a41ba2f26aee1f9e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackForwardMovement: []
-  _nextAttackDelayTime: []
-  _attackStrength: []
-  _attackKnockback: []
-  _resetLightAttackIndex: 0
-  _resetHeavyAttackIndex: 0
+  _attackForwardMovement:
+  - 0
+  - 0.1
+  - 0.2
+  - 0.3
+  - 0.4
+  _nextAttackDelayTime:
+  - 0.15
+  - 0.15
+  - 0.6
+  - 0.3
+  - 0.5
+  _attackStrength:
+  - 0.3
+  - 0.3
+  - 0.4
+  - 0.6
+  - 1
+  _attackKnockback:
+  - 0
+  - 0
+  - 0
+  _resetLightAttackIndex: 0.5
+  _resetHeavyAttackIndex: 0.5
+  _layerEnemies:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &4077028922969241082
 GameObject:
   m_ObjectHideFlags: 0
