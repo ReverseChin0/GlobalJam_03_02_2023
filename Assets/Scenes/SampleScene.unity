@@ -1304,6 +1304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_Enemy_Basic
       objectReference: {fileID: 0}
+    - target: {fileID: 3428891912665951080, guid: 91c5072e489649349a83b402ae8533f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3428891912665951084, guid: 91c5072e489649349a83b402ae8533f4, type: 3}
       propertyPath: m_RootOrder
       value: 9
