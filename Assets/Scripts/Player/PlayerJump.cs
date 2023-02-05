@@ -107,7 +107,7 @@ public class PlayerJump : MonoBehaviour
                 if (m_GroundCheck.isOneWay() && crouch.isCrouching)
                 {
                     cancelCrouch = true;
-                    //Do Nothing
+                    Debug.Log("NADA");
                 }
                 else
                 {

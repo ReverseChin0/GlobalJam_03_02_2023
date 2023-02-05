@@ -1,0 +1,605 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4077028921728574194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4077028921728574199}
+  - component: {fileID: 4077028921728574198}
+  - component: {fileID: 4077028921728574197}
+  - component: {fileID: 4077028921728574152}
+  - component: {fileID: 4077028921728574196}
+  - component: {fileID: 4502075047841197577}
+  - component: {fileID: 4077028921728574195}
+  - component: {fileID: 4077028921728574158}
+  - component: {fileID: 4077028921728574154}
+  - component: {fileID: 4077028921728574153}
+  - component: {fileID: 4077028921728574155}
+  - component: {fileID: 4077028921728574156}
+  - component: {fileID: 4077028921728574157}
+  - component: {fileID: 4077028921728574144}
+  m_Layer: 0
+  m_Name: P_Player
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4077028921728574199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028921728574194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.53, y: -3.79, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4077028922969241083}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &4077028921728574198
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028921728574194}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!50 &4077028921728574197
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028921728574194}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 5
+  m_Material: {fileID: 6200000, guid: aa4c811aca15d12409c0ae690b139e2a, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &4077028921728574152
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028921728574194}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &4077028921728574196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028921728574194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 338eb2f1b4eab3b49bcda30c04427f04, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4077028921728574195}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4751a798-d02f-4589-9109-20d752dc607b
+    m_ActionName: Player/Move[/DualSenseGamepadHID/dpad/left,/DualSenseGamepadHID/dpad/right,/DualSenseGamepadHID/leftStick/left,/DualSenseGamepadHID/leftStick/right,/Keyboard/a,/Keyboard/d,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4077028921728574144}
+        m_TargetAssemblyTypeName: PlayerAttackComponent, Assembly-CSharp
+        m_MethodName: DoLightAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f23073bb-695f-4fa2-a198-742ddaefb157
+    m_ActionName: Player/LightAttack[/DualSenseGamepadHID/buttonWest,/Keyboard/x,/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4077028921728574154}
+        m_TargetAssemblyTypeName: PlayerJump, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4077028921728574157}
+        m_TargetAssemblyTypeName: PlayerFallThrough, Assembly-CSharp
+        m_MethodName: FallThroughPlatform
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e6af1184-4368-45c9-b5be-d8fac8961a6f
+    m_ActionName: Player/Jump[/Keyboard/z,/Keyboard/j,/Keyboard/space,/DualSenseGamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4077028921728574144}
+        m_TargetAssemblyTypeName: PlayerAttackComponent, Assembly-CSharp
+        m_MethodName: DoHeavyAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6d0669aa-30be-49e1-9bb1-5489a82f0897
+    m_ActionName: Player/HeavyAttack[/DualSenseGamepadHID/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ce245faf-d61d-477e-acdf-a5e17775dcf2
+    m_ActionName: Player/Grab[/Keyboard/leftCtrl,/DualSenseGamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b0b77d80-b665-4202-a494-348c2dd20530
+    m_ActionName: Player/Pause[/DualSenseGamepadHID/start,/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4077028921728574156}
+        m_TargetAssemblyTypeName: PlayerCrouch, Assembly-CSharp
+        m_MethodName: Crouch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fc87f25b-654f-4601-a989-62238725ba2b
+    m_ActionName: Player/Crouch[/DualSenseGamepadHID/dpad/down,/DualSenseGamepadHID/leftStick/down,/Keyboard/s,/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4077028921728574155}
+        m_TargetAssemblyTypeName: PlayerDash, Assembly-CSharp
+        m_MethodName: Dash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a8240fcc-ef2a-4566-b53c-cd78e4ad7f0d
+    m_ActionName: Player/Dash[/DualSenseGamepadHID/rightShoulder,/DualSenseGamepadHID/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4077028921728574158}
+        m_TargetAssemblyTypeName: PlayerShootComponent, Assembly-CSharp
+        m_MethodName: Shoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: aa8f907c-63e3-4dd3-9cfa-26541448df86
+    m_ActionName: Player/Shoot[/DualSenseGamepadHID/leftTrigger,/DualSenseGamepadHID/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a820e2a1-6298-46b5-b764-78da4b5fc79e
+    m_ActionName: Rebind/Move[/DualSenseGamepadHID/dpad/left,/DualSenseGamepadHID/dpad/right,/DualSenseGamepadHID/leftStick/left,/DualSenseGamepadHID/leftStick/right,/Keyboard/a,/Keyboard/d,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 135e1f39-420d-4c6a-9d3a-e864562ffb97
+    m_ActionName: Rebind/LightAttack[/DualSenseGamepadHID/buttonWest,/Keyboard/x,/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 36eb0c9c-35ff-4fe6-a4c2-0f1374228186
+    m_ActionName: Rebind/Jump[/Keyboard/z,/Keyboard/j,/Keyboard/space,/DualSenseGamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5fa2b426-7ae9-4e4a-9588-3371eaec6d20
+    m_ActionName: Rebind/HeavyAttack[/DualSenseGamepadHID/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 01cf4445-2aad-468c-82c4-44cfc67d375c
+    m_ActionName: Rebind/Grab[/Keyboard/leftCtrl,/DualSenseGamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8f14361a-07f5-47d1-a6c7-3c15888ba788
+    m_ActionName: Rebind/Pause[/DualSenseGamepadHID/start,/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ddf2f877-3d09-44db-9bb7-e92d6b45385c
+    m_ActionName: Rebind/Crouch[/DualSenseGamepadHID/dpad/down,/DualSenseGamepadHID/leftStick/down,/Keyboard/s,/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 53e900ca-b0d0-41a1-a9ad-95de7710e16b
+    m_ActionName: Rebind/Dash[/DualSenseGamepadHID/rightShoulder,/DualSenseGamepadHID/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d319820f-9f4e-4a35-a70f-52fc9c3b4988
+    m_ActionName: Rebind/Shoot[/DualSenseGamepadHID/leftTrigger,/DualSenseGamepadHID/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d86b86ab-a0c1-4c88-97d7-354176658e41
+    m_ActionName: UI/Navigate[/DualSenseGamepadHID/leftStick/up,/DualSenseGamepadHID/rightStick/up,/DualSenseGamepadHID/leftStick/down,/DualSenseGamepadHID/rightStick/down,/DualSenseGamepadHID/leftStick/left,/DualSenseGamepadHID/rightStick/left,/DualSenseGamepadHID/leftStick/right,/DualSenseGamepadHID/rightStick/right,/DualSenseGamepadHID/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: db213978-c335-4972-a7f9-dd6176bf5427
+    m_ActionName: UI/Submit[/Keyboard/enter,/DualSenseGamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 412695bd-bf94-4d8a-8bab-701c07fe09b8
+    m_ActionName: UI/Cancel[/Keyboard/c,/DualSenseGamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cfa9df66-cb6c-42dc-9f64-dcf27c8a7335
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 28675d15-d271-4aa9-afb9-69f67888bbc9
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 44fa6d87-fe81-4955-958b-fc0583bd6597
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dce283e6-8442-4040-b69e-c1194a67864a
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 91888c08-3ccf-4db4-978d-7cd5f47d3069
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 44ab0e94-51b6-4191-81dd-a5da962e9eea
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2050933a-9efc-4fd2-b6ce-7973f1d7d9cb
+    m_ActionName: UI/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &4502075047841197577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028921728574194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab149eca08d20d4a86e298d50cc731b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MaxHealth: 3
+--- !u!114 &4077028921728574195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028921728574194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52a511ef9213244dbb1096f73f2d001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Horizontal: {x: 0, y: 0}
+  m_Speed: 6
+--- !u!114 &4077028921728574158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028921728574194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e91356e020b6844a81a929c442d1b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shootRate: 0.2
+  _shootForce: 10
+  _attackRangeRadius: 10
+  _maxUpShootAngle: 90
+  _minDownShootAngle: 45
+--- !u!114 &4077028921728574154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028921728574194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8df72e6ea8a10bb4ca3e9139d303c71c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpTimeCounter: 0
+  maxJumpTimes: 2
+  m_IsJumping: 0
+  jumpingPower: 10.5
+  jumpTime: 0.2
+  landed: 0
+  doubleJumpFall: 0
+  coyoteTimeCounter: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  cancelCrouch: 0
+--- !u!114 &4077028921728574153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028921728574194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2b6c471696e8545865d5de460d7c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GroundCheck: {fileID: 4077028922969241083}
+  m_GroundLayer:
+    serializedVersion: 2
+    m_Bits: 72
+  m_IsGrounded: 0
+--- !u!114 &4077028921728574155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028921728574194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61c1601abc66a184188f606bb860bb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Force: 2000
+--- !u!114 &4077028921728574156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028921728574194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab012447ec9d0249a8059e493469348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crouchInput: 0
+  isCrouching: 0
+  otherInput: 0
+  ground: {fileID: 4077028921728574153}
+  noFriction: {fileID: 6200000, guid: aa4c811aca15d12409c0ae690b139e2a, type: 2}
+  fullFriction: {fileID: 6200000, guid: f6fa1f6f2e31ffa4dad17a3607f02551, type: 2}
+  cooldown: 0
+--- !u!114 &4077028921728574157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028921728574194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b8748d43011aa438dd91ca561f44af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallThrough: 0
+  timerTime: 0.1
+--- !u!114 &4077028921728574144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028921728574194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e38577ea6d3b2a41ba2f26aee1f9e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackForwardMovement: []
+  _nextAttackDelayTime: []
+  _attackStrength: []
+  _attackKnockback: []
+  _resetLightAttackIndex: 0
+  _resetHeavyAttackIndex: 0
+--- !u!1 &4077028922969241082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4077028922969241083}
+  - component: {fileID: 4077028922969241084}
+  - component: {fileID: 4077028922969241085}
+  m_Layer: 7
+  m_Name: GroundCheck
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4077028922969241083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028922969241082}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.557, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4077028921728574199}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &4077028922969241084
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028922969241082}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.15}
+  m_EdgeRadius: 0
+--- !u!114 &4077028922969241085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077028922969241082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d23c4980ca7fb844a4fcbc3641e81bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BehindPlatform: 0
