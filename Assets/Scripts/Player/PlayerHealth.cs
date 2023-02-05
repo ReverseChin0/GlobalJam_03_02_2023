@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void ResetHealth()
     {
+        Debug.Log("VIDA REGENERADA");
         m_CurrentHealth = m_MaxHealth;
     }
 
