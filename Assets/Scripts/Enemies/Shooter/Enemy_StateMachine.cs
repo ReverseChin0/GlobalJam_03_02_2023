@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_StateMachine : Enemy_Base
 {
-    [SerializeField] private List<MonoBehaviour> m_States;
+    [SerializeField] public List<MonoBehaviour> m_States;
     [SerializeField] private int m_InitialStateIndex;
 
     private MonoBehaviour m_ActualState;

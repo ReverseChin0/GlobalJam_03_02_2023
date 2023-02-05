@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(byte a_Amount)
     {
+        Debug.Log("DAMAGE");
         m_CurrentHealth -= a_Amount;
         if (m_CurrentHealth <= 0)
             Death();
