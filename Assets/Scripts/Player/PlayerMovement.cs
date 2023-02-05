@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D m_Rigibody;
 
     [SerializeField] private float m_Speed;
+    public bool IsFacingRight => m_IsFacingRight;
+    private bool m_IsFacingRight;
 
     private void Awake()
     {
@@ -24,6 +26,11 @@ public class PlayerMovement : MonoBehaviour
         {
             m_Horizontal = context.ReadValue<Vector2>();
             m_Horizontal.Normalize();
+
+            if (m_Horizontal.x > 0)
+                m_IsFacingRight = true;
+            else if (m_Horizontal.x < 0)
+                m_IsFacingRight = false;
         }
     }
 }

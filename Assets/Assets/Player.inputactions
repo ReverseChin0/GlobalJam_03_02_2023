@@ -453,17 +453,6 @@
                 },
                 {
                     "name": "",
-                    "id": "eaf046f3-273c-46e5-9aa5-35676619b6b8",
-                    "path": "<Keyboard>/anyKey",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "5f5c50bc-49eb-4b3c-b250-9ef74e66fa20",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",

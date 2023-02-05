@@ -6,12 +6,20 @@ public class PlayerGroundCheck : MonoBehaviour
 {
     public Transform m_GroundCheck;
     public LayerMask m_GroundLayer;
-    public bool isGrounded = false;
+    public bool m_IsGrounded;
 
     public bool IsGrounded()
     {
-        isGrounded = Physics2D.OverlapCircle(m_GroundCheck.position, 0.3f, m_GroundLayer);
+        m_IsGrounded = Physics2D.OverlapCircle(m_GroundCheck.position, 0.3f, m_GroundLayer);
         return Physics2D.OverlapCircle(m_GroundCheck.position, 0.3f, m_GroundLayer);
+    }
+
+    public bool isOneWay()
+    {
+        if (Physics2D.OverlapCircle(m_GroundCheck.position, 0.3f, m_GroundLayer) != false)
+            return Physics2D.OverlapCircle(m_GroundCheck.position, 0.3f, m_GroundLayer).transform.CompareTag("Platform");
+        else
+            return false;
     }
 
     private void OnDrawGizmos()

@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerJump : MonoBehaviour
 {
+    private PlayerCrouch crouch;
     private PlayerGroundCheck m_GroundCheck;
     private Rigidbody2D m_Rigibody;
     public float jumpTimeCounter;
@@ -10,7 +11,7 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private int maxJumpTimes;
     private int jumpTimes;
 
-    private bool m_IsJumping;
+    public bool m_IsJumping;
     public float jumpingPower = 0.1f;
     public float jumpTime;
     public bool landed = false;
@@ -19,16 +20,17 @@ public class PlayerJump : MonoBehaviour
     private float coyoteTime = 0.15f;
     public float coyoteTimeCounter;
     public LayerMask whatIsGround;
+    public bool cancelCrouch;
 
     void Awake()
     {
         m_GroundCheck = GetComponent<PlayerGroundCheck>();
         m_Rigibody = GetComponent<Rigidbody2D>();
+        crouch = GetComponent<PlayerCrouch>();
     }
 
     private void OnDisable()
     {
-        //jumpButtonHeld = false;
         coyoteTimeCounter = 0f;
         jumpTimeCounter = 0f;
         m_Rigibody.velocity = new Vector2(m_Rigibody.velocity.x, 0);
@@ -102,12 +104,19 @@ public class PlayerJump : MonoBehaviour
         {
             if (context.performed && (coyoteTimeCounter > 0f || jumpTimes > 0))
             {
-                jumpTimes -= 1;
-                m_IsJumping = true;
-                jumpButtonHeld = true;
-                jumpTimeCounter = jumpTime;
-                m_Rigibody.velocity = new Vector2(m_Rigibody.velocity.x, jumpingPower / Time.deltaTime * Time.unscaledDeltaTime);
-                
+                if (m_GroundCheck.isOneWay() && crouch.isCrouching)
+                {
+                    cancelCrouch = true;
+                    //Do Nothing
+                }
+                else
+                {
+                    jumpTimes -= 1;
+                    m_IsJumping = true;
+                    jumpButtonHeld = true;
+                    jumpTimeCounter = jumpTime;
+                    m_Rigibody.velocity = new Vector2(m_Rigibody.velocity.x, jumpingPower / Time.deltaTime * Time.unscaledDeltaTime);
+                }
             }
             if (context.canceled)
             {
