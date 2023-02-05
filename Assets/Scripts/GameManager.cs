@@ -81,6 +81,7 @@ public class GameManager : SingletonAsComponent<GameManager>
 
     public void LoadLevel(string _s)
     {
+        Time.timeScale = 1;
         ScreenFader._inst.FadeToLevel(_s);
     }
 
@@ -137,12 +138,4 @@ public class GameManager : SingletonAsComponent<GameManager>
         }
     }
 
-    void OnDrawGizmos()
-    {
-        Handles.Label(transform.position, _timerToDeath.ToString());
-        Handles.color = Color.red;
-        Handles.Label(transform.position - Vector3.up, _score.ToString());
-        /*Handles.color = Color.blue;
-        Handles.Label(transform.position - Vector3.up*2, _lastKillTime.ToString());*/
-    }
 }
