@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemy_Base : MonoBehaviour
 {
     [Header("Stats")]
-    private byte m_CurrentHealth;
-    [SerializeField] private byte m_MaxHealth;
+    private int m_CurrentHealth;
+    [SerializeField] private int m_MaxHealth;
     private Rigidbody2D m_Rigibody;
 
     private void Awake()
@@ -15,7 +15,7 @@ public class Enemy_Base : MonoBehaviour
         m_Rigibody = GetComponent<Rigidbody2D>();
     }
 
-    public void TakeDamage(byte a_Amount)
+    public void TakeDamage(int a_Amount)
     {
         m_CurrentHealth -= a_Amount;
         if (m_CurrentHealth <= 0)
@@ -24,8 +24,9 @@ public class Enemy_Base : MonoBehaviour
 
     private void Death()
     {
-        //Reproducir animacion de muerte
-        //Sumar puntos
+        GameManager.Instance.EnemyKilled();
+        FindObjectOfType<PlayerShootComponent>().RemoveMeFromList(transform);
+        Destroy();
     }
 
     public void Destroy()

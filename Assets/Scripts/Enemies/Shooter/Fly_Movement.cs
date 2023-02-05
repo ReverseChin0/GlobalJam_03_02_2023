@@ -7,11 +7,13 @@ public class Fly_Movement : MonoBehaviour
     private Enemy_StateMachine m_StateMachine;
     [SerializeField] private float m_Speed;
     private Vector2 m_CurrentTarget;
+    private Transform m_Player;
 
     private void Awake()
     {
         m_StateMachine = GetComponent<Enemy_StateMachine>();
         GetNextTarget();
+        m_Player = GameObject.Find("P_Player").transform;
     }
 
     private void OnEnable()
@@ -36,6 +38,14 @@ public class Fly_Movement : MonoBehaviour
         return _position;
     }
 
+
+    private void Update()
+    {
+        if (transform.position.x < m_Player.position.x)
+            transform.localScale = new Vector3(-1, 1, 1);
+        else
+            transform.localScale = new Vector3(1, 1, 1);
+    }
 
     private void Move()
     {

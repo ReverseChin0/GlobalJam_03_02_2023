@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine;
+using Spine.Unity;
 
 public class Fly_Shoot : MonoBehaviour
 {
+    public SkeletonAnimation Wasp_Skeleton; //Used to control everything realted to the animations.
     private Enemy_StateMachine m_StateMachine;
     [SerializeField] private GameObject m_ProjectilePrefab;
     [SerializeField] private Transform m_StartPosition;
@@ -31,6 +34,13 @@ public class Fly_Shoot : MonoBehaviour
         StartCoroutine(AnticipationStart());
     }
 
+    private void Update()
+    {
+        if (transform.position.x < m_TargetPosition.position.x)
+            transform.localScale = new Vector3(-1, 1, 1);
+        else
+            transform.localScale = new Vector3(1, 1, 1);
+    }
 
     private IEnumerator AnticipationStart()
     {
@@ -59,6 +69,9 @@ public class Fly_Shoot : MonoBehaviour
 
     public void ShootProjectile()
     {
+        Wasp_Skeleton.AnimationState.SetAnimation(0, "Attack", false);
+        Wasp_Skeleton.AnimationState.AddAnimation(0, "Idle", true, 0.0f);
+
         Vector3 lookDir = m_TargetPosition.position - transform.position;
         lookDir.Normalize();
         float _aimAngle = Vector2.SignedAngle(Vector2.right, lookDir);

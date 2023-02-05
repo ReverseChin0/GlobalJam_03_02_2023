@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerJump : MonoBehaviour
 {
+    public JicamaAnimManager m_Animations;
+
     private PlayerCrouch crouch;
     private PlayerGroundCheck m_GroundCheck;
     private Rigidbody2D m_Rigibody;
@@ -40,6 +42,8 @@ public class PlayerJump : MonoBehaviour
     {
         if (m_Rigibody.velocity.y < 0)
         {
+            if(m_IsJumping)
+                m_Animations.Fall();
             m_IsJumping = false;
         }
         if (m_IsJumping)
@@ -93,6 +97,7 @@ public class PlayerJump : MonoBehaviour
 
     public void Land()
     {
+        m_Animations.Fall();
         landed = true;
         doubleJumpFall = false;
         coyoteTimeCounter = coyoteTime;
@@ -107,10 +112,10 @@ public class PlayerJump : MonoBehaviour
                 if (m_GroundCheck.isOneWay() && crouch.isCrouching)
                 {
                     cancelCrouch = true;
-                    Debug.Log("NADA");
                 }
                 else
                 {
+                    m_Animations.Jump();
                     jumpTimes -= 1;
                     m_IsJumping = true;
                     jumpButtonHeld = true;
