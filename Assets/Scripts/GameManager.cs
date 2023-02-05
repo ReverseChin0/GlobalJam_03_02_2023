@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : SingletonAsComponent<GameManager>
 {
@@ -10,9 +12,14 @@ public class GameManager : SingletonAsComponent<GameManager>
     bool _gameOverByFinish = false;
     [SerializeField]
     float _maxTimeBetweenKills = 6.0f, _maxQuickKillScore = 100;
-    float _lastKillTime=0;
+    float _lastKillTime=-1;
     bool _killedOneEnemie = false;
+    private byte _rankSkill = 0;
 
+    [SerializeField]
+    TextMeshProUGUI _rankText;
+    [SerializeField]
+    Image _rankImage,_rankStar;    
     #region SINGLETON
     public static GameManager Instance
     {
@@ -24,11 +31,13 @@ public class GameManager : SingletonAsComponent<GameManager>
     private void Start()
     {
         SetTimerToDeath(100);
+        _rankImage.fillAmount = 0;
     }
 
     public void SetTimerToDeath(float timerToDeath)
     {
         _timerToDeath = timerToDeath;
+        _rankStar.color = new Color(0.8f, 0.6f, 0.1f, 0);
     }
 
     private void Update()
@@ -38,6 +47,17 @@ public class GameManager : SingletonAsComponent<GameManager>
         {
             GameOverRoutine();
         }
+
+        float percentageOfScore = (Time.time - _lastKillTime) / _maxTimeBetweenKills;
+        _rankImage.fillAmount = 1 - percentageOfScore;
+        if (1 - percentageOfScore <= 0)
+        {
+            _rankSkill = 0;
+            _killedOneEnemie = false;
+            StyleFeedback();
+        }
+
+        _rankStar.rectTransform.Rotate(0, 0, Time.deltaTime * _rankSkill*2);
     }
     void GameOverRoutine()
     {
@@ -66,16 +86,42 @@ public class GameManager : SingletonAsComponent<GameManager>
             if (_lastKillTime > _lastKillTime+_maxTimeBetweenKills)
             {
                 _killedOneEnemie = false;
+                _rankSkill = 0;
+                StyleFeedback();
                 return;
             }                
             float percentageOfScore = (Time.time - _lastKillTime) / _maxTimeBetweenKills;
             float scoreToAdd = Mathf.Lerp(_maxQuickKillScore, 1, percentageOfScore);
 
+            if (_rankSkill<7) _rankSkill++;
             print("Score " + scoreToAdd);
             AddScore(scoreToAdd);
+            StyleFeedback();
         }
         _lastKillTime = Time.time;
         _killedOneEnemie = true;
+    }
+
+    public void StyleFeedback()
+    {
+        switch (_rankSkill)
+        {
+            case 1: _rankText.text = "D"; break;
+            case 2: _rankText.text = "C";
+                _rankStar.color = new Color(0.8f, 0.6f, 0.1f, 0.2f); break;
+            case 3: _rankText.text = "B";
+                _rankStar.color = new Color(0.8f, 0.6f, 0.1f, 0.3f); break;
+            case 4: _rankText.text = "A";
+                _rankStar.color = new Color(0.8f, 0.6f, 0.1f, 0.5f); break;
+            case 5: _rankText.text = "S";
+                _rankStar.color = new Color(0.8f, 0.6f, 0.1f, 0.7f); break;
+            case 6: _rankText.text = "SS";
+                _rankStar.color = new Color(0.8f, 0.6f, 0.1f, 0.8f); break;
+            case 7: _rankText.text = "SSS";
+                _rankStar.color = new Color(0.8f, 0.6f, 0.1f, 0.9f); break;
+            default: _rankText.text = "";
+                _rankStar.color = new Color(0.8f, 0.6f, 0.1f, 0f); break;
+        }
     }
 
     void OnDrawGizmos()

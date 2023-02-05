@@ -41,7 +41,7 @@ public class MainMenuScript : MonoBehaviour
         _audioSource.volume = _vol * _vol;
     }
 
-    void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }
