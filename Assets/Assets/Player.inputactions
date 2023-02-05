@@ -453,6 +453,17 @@
                 },
                 {
                     "name": "",
+                    "id": "62ba7158-77ad-4ca6-a571-78a94b9ed8fd",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ffa58165-4fa3-4621-ba9d-8672bd994b97",
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
