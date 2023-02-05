@@ -9,7 +9,7 @@ public class PlayerShootComponent : MonoBehaviour
     [SerializeField]
     private Transform _aimArrow;
     [SerializeField]
-    private float _shootRate = 0.1f, _shootForce = 10, _attackRangeRadius = 10, _maxUpShootAngle=90, _minDownShootAngle=30;
+    private float _shootRate = 0.2f, _shootForce = 10, _attackRangeRadius = 10, _maxUpShootAngle=90, _minDownShootAngle=45;
 
     [SerializeField]
     bool _facingRight = true;

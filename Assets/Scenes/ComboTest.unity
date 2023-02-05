@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 305775890}
   - component: {fileID: 305775894}
   - component: {fileID: 305775895}
+  - component: {fileID: 305775896}
   m_Layer: 0
   m_Name: PlayerRepresentation
   m_TagString: Untagged
@@ -379,6 +380,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 305775889}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e38577ea6d3b2a41ba2f26aee1f9e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackForwardMovement:
+  - 0
+  - 0.1
+  - 0.2
+  - 0.3
+  - 0.4
+  _nextAttackDelayTime:
+  - 0.15
+  - 0.15
+  - 0.6
+  - 0.3
+  - 0.5
+  _attackStrength:
+  - 0.3
+  - 0.3
+  - 0.4
+  - 0.6
+  - 1
+  _attackKnockback:
+  - 0
+  - 0
+  - 0
+  _resetLightAttackIndex: 0.5
+  _resetHeavyAttackIndex: 0.5
+  _isFacingRight: 0
+--- !u!114 &305775895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305775889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e91356e020b6844a81a929c442d1b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -389,7 +427,7 @@ MonoBehaviour:
   _maxUpShootAngle: 90
   _minDownShootAngle: 45
   _facingRight: 1
---- !u!114 &305775895
+--- !u!114 &305775896
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -419,7 +457,19 @@ MonoBehaviour:
     m_ActionId: 4751a798-d02f-4589-9109-20d752dc607b
     m_ActionName: Player/Move[/Keyboard/a,/Keyboard/d,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 305775894}
+        m_TargetAssemblyTypeName: PlayerAttackComponent, Assembly-CSharp
+        m_MethodName: DoLightAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f23073bb-695f-4fa2-a198-742ddaefb157
     m_ActionName: Player/LightAttack[/Keyboard/x,/Keyboard/k]
   - m_PersistentCalls:
@@ -427,7 +477,19 @@ MonoBehaviour:
     m_ActionId: e6af1184-4368-45c9-b5be-d8fac8961a6f
     m_ActionName: Player/Jump[/Keyboard/z,/Keyboard/j,/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 305775894}
+        m_TargetAssemblyTypeName: PlayerAttackComponent, Assembly-CSharp
+        m_MethodName: DoHeavyAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6d0669aa-30be-49e1-9bb1-5489a82f0897
     m_ActionName: Player/HeavyAttack
   - m_PersistentCalls:
@@ -448,7 +510,7 @@ MonoBehaviour:
     m_ActionName: Player/Dash
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 305775894}
+      - m_Target: {fileID: 305775895}
         m_TargetAssemblyTypeName: PlayerShootComponent, Assembly-CSharp
         m_MethodName: Shoot
         m_Mode: 0
@@ -461,7 +523,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: aa8f907c-63e3-4dd3-9cfa-26541448df86
-    m_ActionName: Player/Shoot
+    m_ActionName: Player/Shoot[/Mouse/middleButton]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: a820e2a1-6298-46b5-b764-78da4b5fc79e
