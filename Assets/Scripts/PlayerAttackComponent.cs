@@ -13,6 +13,9 @@ public class PlayerAttackComponent : MonoBehaviour
     [SerializeField]
     float _resetLightAttackIndex, _resetHeavyAttackIndex;
 
+    [SerializeField]
+    LayerMask _layerEnemies;
+
     private PlayerMovement _Movement;
 
     bool _activeLightHitBox = false, _activeHeavyHitBox = false;
@@ -52,12 +55,13 @@ public class PlayerAttackComponent : MonoBehaviour
     }
 
     void LightAttack()
-    {        
+    {
         if (_lightAttackIndex < 3 && _currentLightAttackDuration <= 0 )
         {            
             _currentLightAttackDuration = _nextAttackDelayTime[_lightAttackIndex];
             _timeSinceLasLighttAttack = 0;
-            _activeLightHitBox = true;            
+            _activeLightHitBox = true;
+            DetectAndDamage(_lightAttackIndex);
             _lightAttackIndex++;            
         }
         else
@@ -74,8 +78,9 @@ public class PlayerAttackComponent : MonoBehaviour
         if (_heavyAttackIndex < 2 && _currentHeavyAttDuration <= 0)
         {
             _currentHeavyAttDuration = _nextAttackDelayTime[_heavyAttackIndex+3];            
-            _timeSinceLastHeavyAttack = 0;
+            _timeSinceLastHeavyAttack = 0;            
             _activeHeavyHitBox = true;
+            DetectAndDamage(_heavyAttackIndex + 3);
             _heavyAttackIndex++;
         }
         else
@@ -103,6 +108,21 @@ public class PlayerAttackComponent : MonoBehaviour
             if (context.performed)
                 HeavyAttack();
         }
+    }
+
+    public void DetectAndDamage(int attIndex)
+    {
+        print("punch");
+        Vector3 direction = _Movement.IsFacingRight ? transform.right : -transform.right;
+        direction *= 1.5f;
+        Debug.DrawLine(transform.position + direction, transform.position + direction + Vector3.up*1.5f, Color.red, 1);
+        Collider2D[] colliders =  Physics2D.OverlapCircleAll(transform.position + direction, 1.5f , _layerEnemies);
+        print(colliders.Length);
+        foreach(Collider2D col in colliders)
+        {
+            print(col+"Golpee un enemigo e hice" + _attackStrength[attIndex] + "de daño");
+        }
+        
     }
 
 
