@@ -1350,13 +1350,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 650477479139072106, guid: 91c5072e489649349a83b402ae8533f4, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3428891912665951080, guid: 91c5072e489649349a83b402ae8533f4, type: 3}
       propertyPath: m_Name
       value: P_Enemy_Basic
-      objectReference: {fileID: 0}
-    - target: {fileID: 3428891912665951080, guid: 91c5072e489649349a83b402ae8533f4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3428891912665951084, guid: 91c5072e489649349a83b402ae8533f4, type: 3}
       propertyPath: m_RootOrder
@@ -1411,10 +1411,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2939485788310165857, guid: a4852a541eb19674f99ef6d7f32fc546, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4077028921728574194, guid: a4852a541eb19674f99ef6d7f32fc546, type: 3}
       propertyPath: m_Name
       value: P_Player

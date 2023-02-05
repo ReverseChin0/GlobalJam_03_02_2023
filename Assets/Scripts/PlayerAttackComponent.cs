@@ -5,9 +5,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttackComponent : MonoBehaviour
 {
+    public JicamaAnimManager m_Animations;
     [SerializeField]                                                                                                                                                                                                                                                                                                                                            
     float[] _attackForwardMovement, _nextAttackDelayTime, _attackStrength, _attackKnockback;
-
+    Rigidbody2D _rigibody;
     int _lightAttackIndex, _heavyAttackIndex;
 
     [SerializeField]
@@ -15,7 +16,7 @@ public class PlayerAttackComponent : MonoBehaviour
 
     [SerializeField]
     LayerMask _layerEnemies;
-
+    private PlayerJump m_Jump;
     private PlayerMovement _Movement;
 
     bool _activeLightHitBox = false, _activeHeavyHitBox = false;
@@ -24,7 +25,10 @@ public class PlayerAttackComponent : MonoBehaviour
 
     private void Awake()
     {
+        m_Jump = GetComponent<PlayerJump>();
         _Movement = GetComponent<PlayerMovement>();
+        m_Animations = GetComponentInChildren<JicamaAnimManager>();
+        _rigibody = GetComponent<Rigidbody2D>();
     }
 
 
@@ -97,7 +101,12 @@ public class PlayerAttackComponent : MonoBehaviour
         if (isActiveAndEnabled)
         {
             if (context.performed)
+            {
+                if (!m_Jump.landed && _lightAttackIndex == 0) _rigibody.simulated = false;
+                if (_lightAttackIndex == 0) StartCoroutine(ResetRigi());
+                m_Animations.LightAttack();
                 LightAttack();
+            }
         }
     }
 
@@ -106,8 +115,19 @@ public class PlayerAttackComponent : MonoBehaviour
         if (isActiveAndEnabled)
         {
             if (context.performed)
+            {
+                if (!m_Jump.landed && _lightAttackIndex == 0) _rigibody.simulated = false;
+                if (_lightAttackIndex == 0) StartCoroutine(ResetRigi());
+                m_Animations.HeavyAttack();
                 HeavyAttack();
+            }
         }
+    }
+
+    IEnumerator ResetRigi()
+    {
+        yield return new WaitForSeconds(0.6f);
+        _rigibody.simulated = true;
     }
 
     public void DetectAndDamage(int attIndex)

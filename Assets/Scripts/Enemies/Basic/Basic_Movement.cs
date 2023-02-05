@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine;
+using Spine.Unity;
 
 public class Basic_Movement : MonoBehaviour
 {
+    public SkeletonAnimation Locust_Skeleton;
+    public Transform _Sprite;
     [SerializeField] private LayerMask m_Ground;
     [SerializeField] private Vector3 m_RaycastOffset;
     [SerializeField] private float _moveSpeed=3f;
@@ -20,6 +24,8 @@ public class Basic_Movement : MonoBehaviour
         m_IsFacingRight = Random.Range(0, 2) == 0 ? false : true;
         if(!m_IsFacingRight)
             m_RaycastOffset = m_RaycastOffset * -1f;
+        Locust_Skeleton.AnimationState.SetAnimation(0, "Attack", false);
+        Locust_Skeleton.AnimationState.AddAnimation(0, "Idle", true, 0.0f);
     }
 
     private void Update()
@@ -29,6 +35,11 @@ public class Basic_Movement : MonoBehaviour
             m_IsFacingRight = !m_IsFacingRight;
             m_RaycastOffset = m_RaycastOffset * -1f;
         }
+
+        if (m_IsFacingRight)
+            _Sprite.localScale = new Vector3(-0.2f, 0.2f, 0.2f);
+        else
+            _Sprite.localScale = new Vector3(0.2f, 0.2f, 0.2f);
     }
 
     private void FixedUpdate()

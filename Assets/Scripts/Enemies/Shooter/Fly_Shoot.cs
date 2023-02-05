@@ -55,7 +55,6 @@ public class Fly_Shoot : MonoBehaviour
 
     private IEnumerator ShootCoroutine()
     {
-        //Animacion o algo de anticipacion
         yield return m_Anticipation;
 
         for (int i = 0; i < m_ProjectileNumber; i++)

@@ -2,12 +2,18 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private byte m_CurrentHealth;
-    [SerializeField] private byte m_MaxHealth;
+    public JicamaAnimManager m_Animations;
+    private int m_CurrentHealth;
+    [SerializeField] private int m_MaxHealth;
 
-    public void TakeDamage(byte a_Amount)
+    private void Awake()
     {
-        Debug.Log("DAMAGE");
+        m_Animations = GetComponentInChildren<JicamaAnimManager>();
+    }
+
+    public void TakeDamage(int a_Amount)
+    {
+        m_Animations.Hurt();
         m_CurrentHealth -= a_Amount;
         if (m_CurrentHealth <= 0)
             Death();
@@ -15,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void ResetHealth()
     {
+        m_Animations.Burrow();
         Debug.Log("VIDA REGENERADA");
         m_CurrentHealth = m_MaxHealth;
     }

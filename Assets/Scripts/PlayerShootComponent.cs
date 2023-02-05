@@ -59,7 +59,7 @@ public class PlayerShootComponent : MonoBehaviour
         if (_targetEnemie == Vector3.zero)
         {
             _targetEnemie = _Movement.IsFacingRight ? Vector2.right : -Vector2.right;
-            _targetEnemie += transform.position;
+            _targetEnemie += m_BulletOrigin.position;
         }
         Vector3 lookDir = _targetEnemie - transform.position;
 
@@ -107,7 +107,7 @@ public class PlayerShootComponent : MonoBehaviour
         Vector2 inferior = (Vector2)(Quaternion.Euler(0, 0, 360-_minDownShootAngle) * Vector2.right);
         float porcentaje = InverseLerp(superior, inferior, shootDir);
         m_Animations.Aim_Fully_Down = porcentaje + 0.25f;
-        GameObject bullet = ObjPooler._instance.Spawn("NormalBullet", transform.position + shootDir, Quaternion.identity);
+        GameObject bullet = ObjPooler._instance.Spawn("NormalBullet", m_BulletOrigin.position + shootDir, Quaternion.identity);
         //GameObject bullet = ObjPooler._instance.Spawn("NormalBullet", _origin.position, Quaternion.identity);
         SimpleProjectile simpleProjectile = bullet.GetComponent<SimpleProjectile>();
         simpleProjectile?.Shoot(shootDir, 100);
@@ -158,7 +158,7 @@ public class PlayerShootComponent : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_targetEnemie, 0.5f);
         Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(transform.position, _attackRangeRadius);
+        Gizmos.DrawWireSphere(m_BulletOrigin.position, _attackRangeRadius);
 
 
         Gizmos.color = Color.yellow;
@@ -172,8 +172,8 @@ public class PlayerShootComponent : MonoBehaviour
             downShootDir.x *= -1;
         }
 
-        Gizmos.DrawLine(transform.position, transform.position + (upShootDir * _attackRangeRadius));
-        Gizmos.DrawLine(transform.position, transform.position + (downShootDir * _attackRangeRadius));
+        Gizmos.DrawLine(transform.position, m_BulletOrigin.position + (upShootDir * _attackRangeRadius));
+        Gizmos.DrawLine(transform.position, m_BulletOrigin.position + (downShootDir * _attackRangeRadius));
 
 
     }
