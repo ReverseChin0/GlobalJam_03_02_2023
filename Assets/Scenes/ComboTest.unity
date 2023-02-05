@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 202012113}
   - component: {fileID: 202012112}
   - component: {fileID: 202012111}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemie (1)
   m_TagString: Enemies
   m_Icon: {fileID: 0}
@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 305775894}
   - component: {fileID: 305775895}
   - component: {fileID: 305775896}
+  - component: {fileID: 305775897}
   m_Layer: 0
   m_Name: PlayerRepresentation
   m_TagString: Untagged
@@ -407,7 +408,9 @@ MonoBehaviour:
   - 0
   _resetLightAttackIndex: 0.5
   _resetHeavyAttackIndex: 0.5
-  _isFacingRight: 0
+  _layerEnemies:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &305775895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,13 +423,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e91356e020b6844a81a929c442d1b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _aimArrow: {fileID: 1341767186}
   _shootRate: 0.2
   _shootForce: 10
   _attackRangeRadius: 10
   _maxUpShootAngle: 90
   _minDownShootAngle: 45
-  _facingRight: 1
 --- !u!114 &305775896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,7 +454,19 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 305775897}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 4751a798-d02f-4589-9109-20d752dc607b
     m_ActionName: Player/Move[/Keyboard/a,/Keyboard/d,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
@@ -605,6 +618,20 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &305775897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305775889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52a511ef9213244dbb1096f73f2d001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Horizontal: {x: 0, y: 0}
+  m_Speed: 10
 --- !u!1 &598548103
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +643,7 @@ GameObject:
   - component: {fileID: 598548105}
   - component: {fileID: 598548104}
   - component: {fileID: 598548107}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemie
   m_TagString: Enemies
   m_Icon: {fileID: 0}
