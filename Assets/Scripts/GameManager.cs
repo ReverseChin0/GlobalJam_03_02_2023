@@ -66,6 +66,7 @@ public class GameManager : SingletonAsComponent<GameManager>
     public void GameOverRoutine()
     {
         _endOverScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 
     [ContextMenu("FinishGame")]
@@ -75,6 +76,7 @@ public class GameManager : SingletonAsComponent<GameManager>
         _gameOverByFinish = true;
         _score += _timerToDeath;
         _scoreText.text = "Your score is :" + _score.ToString();
+        Time.timeScale = 0;
     }
 
     public void LoadLevel(string _s)

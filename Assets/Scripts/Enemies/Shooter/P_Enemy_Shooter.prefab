@@ -107,7 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20dc846a0cd355f4c8267662d86a7ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxHealth: 50
+  m_CurrentHealth: 0
+  m_MaxHealth: 20
   m_States:
   - {fileID: 5569070802274087547}
   - {fileID: 5569070802274087540}
@@ -141,7 +142,7 @@ MonoBehaviour:
   Wasp_Skeleton: {fileID: 8453751005798118526}
   m_ProjectilePrefab: {fileID: 83592324320162212, guid: e1ecb728ae427b7478c4b34c9d516faf, type: 3}
   m_StartPosition: {fileID: 5569070801702361845}
-  m_ProjectileNumber: 3
+  m_ProjectileNumber: 1
   m_Cadence: 0.3
   m_AnticipationTime: 0.5
   m_WaitToStart: 1

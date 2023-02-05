@@ -77,7 +77,7 @@ public class PlayerShootComponent : MonoBehaviour
 
             bool inAngle = false;
             //angulo entre mi transform right y el vector que nos une al enemigo
-            float _angleToPlayer = FindDegree(Vector2.right, enemie.position - m_BulletOrigin.position);                                    
+            float _angleToPlayer = FindDegree(Vector2.right, enemie.position - transform.position);                                    
 
             if (_Movement.IsFacingRight)
             {
@@ -88,7 +88,7 @@ public class PlayerShootComponent : MonoBehaviour
                 if (_angleToPlayer > 180 - _maxUpShootAngle && _angleToPlayer < 180 + _minDownShootAngle) inAngle = true;
             }
 
-            float distance = Vector3.Distance(enemie.position, m_BulletOrigin.position);//obtenemos distancia
+            float distance = Vector3.Distance(enemie.position, transform.position);//obtenemos distancia
             
             if (inAngle && distance < _attackRangeRadius && (closest == Vector3.zero || distance < closestDistance))
             {
@@ -110,7 +110,7 @@ public class PlayerShootComponent : MonoBehaviour
         GameObject bullet = ObjPooler._instance.Spawn("NormalBullet", m_BulletOrigin.position + shootDir, Quaternion.identity);
         //GameObject bullet = ObjPooler._instance.Spawn("NormalBullet", _origin.position, Quaternion.identity);
         SimpleProjectile simpleProjectile = bullet.GetComponent<SimpleProjectile>();
-        simpleProjectile?.Shoot(shootDir, 100);
+        simpleProjectile?.Shoot(shootDir, _shootForce);
     }
 
     float FindDegree(Vector2 from, Vector2 to)

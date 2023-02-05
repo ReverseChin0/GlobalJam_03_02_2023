@@ -32,6 +32,7 @@ public class ScreenFader : MonoBehaviour
 
     public void FadeToLevel(string _lvl) //funcion generica para cambiar de nivel
     {
+        Time.timeScale = 1;
         StartCoroutine(loadLevel(_lvl));
     }
 

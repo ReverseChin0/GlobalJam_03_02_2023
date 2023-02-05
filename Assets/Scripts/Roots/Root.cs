@@ -23,8 +23,6 @@ public class Root : MonoBehaviour
     {
         if (m_Crouch.crouchInput)
         {
-            //Reproducir animacion de enterrarse
-            //Reiniciar timer
             m_Health.ResetHealth();
             m_Collider.enabled = false;
         }

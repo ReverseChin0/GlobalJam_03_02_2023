@@ -28,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
     {
         m_Animations.Burrow();
         m_CurrentHealth = m_MaxHealth;
+        UpdateView();
     }
 
     private void Death()

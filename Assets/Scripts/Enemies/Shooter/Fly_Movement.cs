@@ -28,10 +28,12 @@ public class Fly_Movement : MonoBehaviour
 
     private Vector2 GetRandomScreenPosition()
     {
-        float spawnY = Random.Range
-            (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).y, Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height)).y);
-        float spawnX = Random.Range
-            (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).x, Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x);
+        float spawnY = /*Random.Range
+            (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).y, Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height)).y);*/
+            Random.Range(Camera.main.transform.position.y - 3, Camera.main.transform.position.y + 3);
+        float spawnX = /*Random.Range
+            (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).x, Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x);*/
+            Random.Range(Camera.main.transform.position.x - 6, Camera.main.transform.position.x + 6);
 
         Vector2 _position = new Vector2(spawnX, spawnY);
 

@@ -30,7 +30,7 @@ public class JicamaAnimManager : MonoBehaviour
     {
         if (Shooting)
         {
-            aimTrackEntry.Alpha = Aim_Fully_Down;
+         //   aimTrackEntry.Alpha = Aim_Fully_Down;
         }
     }
 

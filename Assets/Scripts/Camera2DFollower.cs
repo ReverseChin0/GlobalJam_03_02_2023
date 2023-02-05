@@ -26,7 +26,7 @@ public class Camera2DFollower : MonoBehaviour
                 _elapsedTime = 0;
                 _initialPose = transform.position;
 
-                _endPose = _targetIsRight ? transform.position + Vector3.right * 10 : transform.position + Vector3.right * -10;
+                _endPose = _targetIsRight ? transform.position + Vector3.right * 15 : transform.position + Vector3.right * -15;
             }
         }
         else
