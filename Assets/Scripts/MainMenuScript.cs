@@ -25,6 +25,11 @@ public class MainMenuScript : MonoBehaviour
         changeLocale(LocalizationSettings.SelectedLocale.LocaleName == "Spanish (es)" ? 0 : 1);
     }
 
+    public void LoadLevel(string _lev)
+    {
+        ScreenFader._inst.FadeToLevel(_lev);
+    }
+
     public void changeLocale(int localeID)
     {
         StartCoroutine(SetLocale(localeID));

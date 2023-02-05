@@ -17,9 +17,11 @@ public class GameManager : SingletonAsComponent<GameManager>
     private byte _rankSkill = 0;
 
     [SerializeField]
-    TextMeshProUGUI _rankText;
+    TextMeshProUGUI _rankText,_scoreText;
     [SerializeField]
-    Image _rankImage,_rankStar;    
+    Image _rankImage,_rankStar;
+    [SerializeField]
+    GameObject _endOverScreen,_victoryScreen;
     #region SINGLETON
     public static GameManager Instance
     {
@@ -59,16 +61,25 @@ public class GameManager : SingletonAsComponent<GameManager>
 
         _rankStar.rectTransform.Rotate(0, 0, Time.deltaTime * _rankSkill*2);
     }
+
+    [ContextMenu("FinishedDeath")]
     void GameOverRoutine()
     {
-        
+        _endOverScreen.SetActive(true);
     }
 
     [ContextMenu("FinishGame")]
     void FinishedLevelScoreCalculation()
     {
+        _victoryScreen.SetActive(true);
         _gameOverByFinish = true;
         _score += _timerToDeath;
+        _scoreText.text = "Your score is :" + _score.ToString();
+    }
+
+    public void LoadLevel(string _s)
+    {
+        ScreenFader._inst.FadeToLevel(_s);
     }
 
     
