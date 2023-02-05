@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemy_Base : MonoBehaviour
 {
     [Header("Stats")]
-    private int m_CurrentHealth;
-    [SerializeField] private int m_MaxHealth;
+    public int m_CurrentHealth;
+    [SerializeField] public int m_MaxHealth;
     private Rigidbody2D m_Rigibody;
 
     private void Awake()
