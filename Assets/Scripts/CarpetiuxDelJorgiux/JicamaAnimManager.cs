@@ -5,7 +5,6 @@ using Spine;
 using Spine.Unity;
 
 
-
 public class JicamaAnimManager : MonoBehaviour
 {
     public SkeletonAnimation Jicama_Skeleton; //Used to control everything realted to the animations.
@@ -19,6 +18,8 @@ public class JicamaAnimManager : MonoBehaviour
     public int Crack_State = 0;
     public bool Grabbing = false;
     public int Attack_state = 0;
+    public Transform BulletOrigin;
+    public PlayerShootComponent PlayerShoot;
 
     private void Start()
     {
@@ -85,7 +86,7 @@ public class JicamaAnimManager : MonoBehaviour
 
         if (e.Data.Name == "Shoot")
         {
-
+            //PlayerShoot.ShootProjectile(BulletOrigin);
         }
 
         if (e.Data.Name == "Grab")

@@ -6,6 +6,7 @@ public class SimpleProjectile : MonoBehaviour
 {
     private Rigidbody2D _rigidbody;
     private float _lifeTime=2;
+    [SerializeField] private byte m_Damage;
 
     private void Awake()
     {
@@ -20,6 +21,11 @@ public class SimpleProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.CompareTag("Enemies"))
+        {
+            collision.gameObject.GetComponent<Enemy_StateMachine>().TakeDamage(m_Damage);
+        }
+
         gameObject.SetActive(false);
     }
 
