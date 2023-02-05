@@ -32,8 +32,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Death()
     {
-        //Animacion de muerte
-        //Pantalla de muerte
+        GameManager.Instance.GameOverRoutine();
     }
 
     private void UpdateView()

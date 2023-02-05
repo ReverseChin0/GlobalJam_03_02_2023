@@ -63,13 +63,13 @@ public class GameManager : SingletonAsComponent<GameManager>
     }
 
     [ContextMenu("FinishedDeath")]
-    void GameOverRoutine()
+    public void GameOverRoutine()
     {
         _endOverScreen.SetActive(true);
     }
 
     [ContextMenu("FinishGame")]
-    void FinishedLevelScoreCalculation()
+    public void FinishedLevelScoreCalculation()
     {
         _victoryScreen.SetActive(true);
         _gameOverByFinish = true;
